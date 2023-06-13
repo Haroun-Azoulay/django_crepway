@@ -9,7 +9,10 @@ my project is on an e-commerce responsive site to order in book or on site and t
 
 ## Screen of my project
 
-
+![Cover](https://github.com/Haroun-Azoulay/django_crepway/blob/main/img/admin_page.png)
+![Cover](https://github.com/Haroun-Azoulay/django_crepway/blob/main/img/home.png)
+![Cover](https://github.com/Haroun-Azoulay/django_crepway/blob/main/img/menu.png)
+![Cover](https://github.com/Haroun-Azoulay/django_crepway/blob/main/img/contact.png)
 
 
 ## To start
