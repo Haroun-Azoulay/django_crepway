@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container-cart d-flex flex-column">
+  <a href="{% url 'menu' %}" class="text-decoration-none">
+    <div class="d-flex justify-content-start mx-3 my-5" style="font-size: 50px;">
+    <i class="fa-solid fa-arrow-left fa-xl fa-beat" style="color: rgb(255, 208, 0);"></i>
+    </div>
+    </a>
+{% if user.is_authenticated %}
+  {% if orders %}
+    {% for order in orders %}
+    <div class="d-flex justify-content-center">
+    <div class="card card-cart my-5 mx-5 shadow">
+        <div class="row">
+          <div class="col-md-2">
+            <img src="{{ order.product.thumbnail.url }}" class="card-img-top img-cart" alt="{{ order.product.name }}" style="object-fit: cover;">
+          </div>
+          <div class="col-md-10">
+            <div class="card-body">
+              <h5 class="card-title">{{ order.product.name }}</h5>
+              <p class="card-text">Ici c'est vous le chef.</p>
+              <div class="d-flex justify-content-between">
+                <p class="card-text">Quantité: {{ order.quantity }}</p>
+                <p class="card-text">total: {{ order.total_price }}€</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    {% endfor %}
+    <div class="d-flex flex-column align-items-end mx-5 my-5">
+      <div class="d-flex justify-content-center fs-2">
+    <p>Prix total du panier : {{ total_price }}€</p>
+      </div>
+      <div class="d-flex flew-row my-5">
+    <a href="{% url 'delete-cart' %}">
+      <button type="button" class="btn btn-lg btn-danger mx-3">
+        Supprimer le panier
+        </button>
+    </a>
+    <a href="{% url 'payment' %}">
+      <button type="button" class="btn btn-lg btn-success">
+        Passer commande
+      </button>
+    </a>
+    </div>
+    </div>
+  {% else %}
+  <div class="d-flex justify-content-center my-5">
+    <p class="fs-2 my-5">Le panier est vide</p>
+  </div>  
+  {% endif %}
+{% else %}
+  <div class="alert alert-info">
+    Vous n'êtes pas connecté. Pour passer commande, veuillez vous connecter <a href="{% url 'login' %}">ici</a>. Merci.
+  </div>
+{% endif %}
+</section>
+{% endblock %}

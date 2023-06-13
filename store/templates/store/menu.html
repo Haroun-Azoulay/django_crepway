@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Tous les produits</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Je compose ma crêpe</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Nos suggestions crepes salée</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pizza</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Nos suggestions crepes sucrée</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Milk shake, smoothie bubble tea</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Dessert</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% if not user.is_authenticated %}
+<div class="alert alert-info">
+  Vous n'êtes pas connecté. Pour passer commande, veuillez vous connecter <a href="{% url 'login' %}">ici</a>. Merci.
+</div>
+{% endif %}
+<div class="row">
+  {% for product in products %}
+  <div class="product-list d-flex">
+    <div class="card my-5 shadow" style="width:65%">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="{{ product.thumbnail.url }}" class="product-img card-img-top" alt="{{ product.name }}" style="height: 254px; object-fit: cover;">
+        </div>
+        <div class="col-md-8 d-flex flex-column">
+          <div class="card-body">
+            <h5 class="card-title d-flex justify-content-center my-5 fs-3">{{ product.name }}</h5>
+            <p class="card-text ms-1 fs-4 d-flex justify-content-center">{{ product.price }}€</p>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <a class="text-decoration-none text-dark  fs-5" href="{% url 'product' product.slug %}">
+                <div class="look-item w-100 d-flex align-items-center justify-content-center"
+                  style="background-color: rgb(255, 208, 0); height:40px;">
+                  <i class="fa-solid fa-eye mx-2" style="color: #000000;"></i>
+                  Voir l'article
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+{% endblock %}

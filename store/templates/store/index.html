@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% load static %}
+{% load tz %}
+
+<section class="sectionTitle">
+<h1 class="p-0 text-center">Bienvenue à Crep'Way & Pizza<img src="{%  static 'pictures/halal-logo.jpg' %}" alt="..." style="width:100px"></h1>
+<div class="p-0 d-flex justify-content-center background-picture bg-hero-img">
+    <div class="container-selected-menu d-flex">
+<div class="selected-menu">
+<button type="button" class="btn btn-dark mx-2 btn-selected-menu" onclick="displayField('delivery')"><i class="fas fa-car fa-lg me-2" style="color: #feffff;"></i>En Livraison</button>
+<button type="button" class="btn btn-dark mx-2 btn-selected-menu" onclick="displayField('take away')"><i class="fas fa-shopping-bag fa-lg me-2" style="color: #feffff;"></i>A Emporter</button>
+<button type="button" class="btn btn-dark mx-2 btn-selected-menu" onclick="displayField('in place')"><i class="fas fa-utensils fa-lg me-2 "></i>Sur Place</button>
+</div>
+<div class="selected-menu_champ d-flex mt-2">
+<div id="champContainer" class="d-flex"></div>
+    <a href="{% url 'menu' %}"> 
+    <button type="button" id="buttonValidateOrder" class="btn btn-dark d-none">
+    GO!
+      </button>
+      </a>
+      </div>
+      </div>
+    </div>
+</section>
+<section class="my-5 section-menu-choice shadow-lg" style="background-color: rgba(0, 0, 0, 0.118);">
+    <h1 class="my-5 mx-5 py-5">Quelques propositions</h1>
+    <div class="container-menu-choice my-5 mx-5 d-flex">
+       
+        <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{% static 'pictures/index-choiceSaltyCrepe.jpg' %}" class="card-img-top" alt="...">
+              </div>
+              <div class="col-md-8" style="background-color:white">
+                <div class="card-body shadow">
+                  <h5 class="card-title mb-4">Compose ta crêpe salée</h5>
+                  <p class="card-text mb-5">Ici c'est vous le chef.</p>
+                  <div class="card-shop d-flex">
+                  <p class="card-text fs-4 card-shop_price">3,5€</p> 
+                  <button type="button" class="btn btn-lg btn-warning"><i class="fas fa-cart-arrow-down me-3" style="color: #000000;"></i>Ajouter au panier</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{% static 'pictures/index-choiceSweetCrepe.jpg' %}" class="card-img-top" alt="...">
+              </div>
+              <div class="col-md-8" style="background-color:white">
+                <div class="card-body shadow">
+                  <h5 class="card-title mb-4">Compose ta crêpe salée</h5>
+                  <p class="card-text mb-5">Ici c'est vous le chef.</p>
+                  <div class="card-shop d-flex">
+                  <p class="card-text card-shop_price fs-4">3,5€</p> 
+                  <button type="button" class="btn btn-lg btn-warning"><i class="fas fa-cart-arrow-down me-3" style="color: #000000;"></i>Ajouter au panier</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class ="d-flex justify-content-center">
+    <button type="button" class="btn btn-warning btn-lg my-5 mx-5"> <a href="{% url 'menu' %}" class="text-decoration-none text-dark">Afficher toute la carte</a></button>
+    </div>
+        </section >
+
+
+
+<section class="my-5" style="height:600px">
+<h1 class="my-5 mx-5 py-5">Livraison en 3 étapes</h1>
+<div class="card-group">
+    <div class="card shadow-lg">
+        <div class="d-flex justify-content-center my-5">
+      <img src="{% static 'pictures/pizza.gif' %}" class="card-img-top" alt="..." style="width:100px; height:100px">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title my-5 fs-3 d-flex justify-content-center">Composez votre crêpe</h5>
+        <p class="card-text my-5 fs-5">Ou choisissez l'une des crêpes proposées par nos chefs ...</p>
+      </div>
+    </div>
+    <div class="card shadow-lg">
+        <div class="d-flex justify-content-center my-5">
+      <img src="{% static 'pictures/truck.gif' %}" class="card-img-top" alt="..." style="width:100px;height:100px">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title my-5 fs-3 d-flex justify-content-center">Faites-vous livrer</h5>
+        <p class="card-text my-5 fs-5">Nous recevons instantanément votre commande. Une préparation et livraison rapide garantie que ca soit une commande sur place, à emporter ou pour livraison jusqu'à chez vous.</p>
+          </div>
+    </div>
+    <div class="card shadow-lg">
+        <div class="d-flex justify-content-center my-5">
+      <img src="{% static 'pictures/money.gif' %}" class="card-img-top" alt="..." style="width:100px;height:100px">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title my-5 fs-3 d-flex justify-content-center">Réglez votre commande</h5>
+        <p class="card-tex my-5 fs-5">Une fois votre commande est livrée, vous pouvez à ce moment penser à nous.
+            Et à votre crêpe surtout !</p>
+      </div>
+    </div>
+  </div>
+
+
+<section class="section-argumentation my-5 shadow-lg" style="background-color: rgba(0, 0, 0, 0.118);">
+    <div class="container-argumentation d-flex">
+        <div>
+    <h1 class="my-3 py-5 mx-5">
+        Nous sommes plus qu'une crêperie
+    </h1>
+    <p class="mx-5 fs-4">Nous travaillons différements, nous préparons vos crêpes par amour et c'est pour</br>
+         cette raison que vous appréciez CREP'WAY.</br>
+
+        Non seulement la crêpe qui est personnalisable, mais également votre dessert.</p>
+        <ul class="mx-5 my-5 fs-3 list-unstyled">
+            <li class="my-3">
+                <i class="fa-solid fa-circle-check me-2" style="color: #008f51;"></i>Crêpes salées
+            </li>
+            <li>
+                <i class="fa-solid fa-circle-check me-2" style="color: #008f51;"></i>Crêpes sucrées
+            </li>
+            <li class="my-3">
+                <i class="fa-solid fa-circle-check me-2" style="color: #008f51;"></i> Milk Shakes
+            </li>
+            <li class="my-3">
+                <i class="fa-solid fa-circle-check me-2" style="color: #008f51;"></i>Smoothies
+            </li>
+            <li class="my-3">
+              <i class="fa-solid fa-circle-check me-2" style="color: #008f51;"></i>Bubble Tea
+          </li>
+        </ul>
+        </div>
+      <div class="position-relative">
+            <img src="{% static 'pictures/about-image.jpg' %}" class="card-img-top img-argumentation rounded-circle" alt="...">
+            <div class="about-image d-flex">
+              <div class="remove-mobile">
+              <div class="card shadow position-absolute" style="width:50%; top:10px; left:300px;">
+                  <div class="card-body d-flex flex-row">
+                      <i class="fa-solid fa-phone" <i class="fa-regular fa-phone" style="color: #fefc78; font-size:50px;"></i>
+                      <div class="d-flex flex-column">
+                    <h5 class="card-title mx-3">APPELEZ-NOUS</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary mx-3 fs-5">0616032161</h6>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="about-image d-flex relative">
+                      <div class="card shadow position-absolute" style="width:50%; top:300px;">
+                          <div class="card-body d-flex flex-row">
+                              <img src="{% static 'pictures/badge-icon-pizza.png' %}" style="width: 50px" class="mb-2">
+                              <div class="d-flex flex-column">
+                            <h5 class="card-title mx-3">COMMANDEZ-MOI</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary mx-3 fs-5">c'est par <a href="{% url 'menu' %}" class="text-decoration-none text-dark">là</a></h6>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+          </div>
+          </div>
+        </div>
+        </div>
+</section>
+{% endblock %}
+
+

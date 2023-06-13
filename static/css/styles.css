@@ -1,0 +1,26 @@
+* {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+
+.sectionTitle {
+    margin-top: 50px;
+}
+
+
+  .background-accounts {
+    background-image: url('/static/pictures/background-accounts.avif');
+    background-size: cover; /* Pour redimensionner l'image afin de remplir le conteneur */
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh; /* Utilisez 100vh pour définir la hauteur du conteneur sur 100% de la hauteur de la fenêtre */
+    width: 100%; /* Utilisez width: 100% pour que le fond prenne toute la largeur du conteneur */
+  }
+
+  .connexion-login_question {
+    color:white;
+    font-weight: bold;
+  }
+  
+  
+ 

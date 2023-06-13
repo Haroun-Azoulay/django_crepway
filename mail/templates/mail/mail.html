@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section>
+  <div class="background-accounts" style="color: white;">
+    <form method="post" action="{% url 'mail' %}"> 
+        {% csrf_token %}
+        <div class="d-flex justify-content-center">
+          <div class="contact-form"">
+            <h2 class="my-5">Demande de contact ou suggestion?</h2>
+            <h4 class="my-5">Ce formulaire de contact est fait pour répondre à toutes vos demandes.</h4>
+            <div class="mb-3 my-5 fs-4">
+              <label for="exampleFormControlInput1" class="form-label">Adresse email d'envoie</label>
+              <input type="text" class="form-control form-control-lg" name="email" id="exampleFormControlInput1"
+            </div>
+            <div class="mb-3 my-5 fs-4">
+              <label for="exampleInputSubject" class="form-label">Sujet</label>
+              <input type="text" class="form-control form-control-lg" name="subject" id="exampleInputSubject">
+            </div>
+            <div class="mb-3 my-5 fs-4">
+              <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+              <textarea class="form-control form-control-lg" id="exampleFormControlTextarea1" name="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-lg btn-warning text-white my-5">Envoyez</button>
+          </div>
+        </div>
+      </form>
+  </div>
+</section>
+{% endblock %}

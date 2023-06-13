@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="my-5" style="height:800px;">
+    <a href="{% url 'index' %}" class="text-decoration-none">
+        <div class="d-flex justify-content-start mx-3 my-5" style="font-size: 50px;">
+            <i class="fa-solid fa-arrow-left fa-xl fa-beat" style="color: rgb(255, 208, 0);"></i>
+        </div>
+    </a>
+    <div class="d-flex justify-content-center align-items-center flex-column">
+        <p class="fs-3">La demande a bien été reçu</br> 
+            On traite votre demande merci.</p>
+    </div>
+</section>
+{% endblock %}

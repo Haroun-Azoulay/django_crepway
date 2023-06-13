@@ -1,0 +1,86 @@
+@media (min-width: 1024px) {
+    .contact-form {
+        width: 40%;
+        height: 700px;
+        margin-top: 100px;
+      }
+    
+    .brand-logo {
+        height:100px;
+    }
+    .footer-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .footer-end {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .background-picture {
+        background-image: url('/static/pictures/hero-image.png');
+        height: 1000px;
+        background-size: contain; /* ou background-size: cover; */
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    #selectedLocation {
+        position: absolute;
+        bottom: 10px;
+        left: 344px;
+    }
+    .container-selected-menu {
+    flex-direction: column;
+    justify-content: center;
+    }
+    .selected-menu_champ {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .container-menu-choice {
+        justify-content: space-around;
+    } 
+    .section-menu-choice {
+        height:600px;
+    }
+    .card-shop {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .card-img-top{
+        height:207px;
+    }
+    .section-argumentation {
+        height: 800px;
+    }
+    .container-argumentation {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .img-argumentation {
+        height:100%;
+    }
+
+    .product-list {
+        align-content: center;
+        justify-content: center;
+        flex-basis: 50%;
+        max-width: 50%;   
+    }
+    .card-detail {
+        width: 50%;
+    }
+    .container-detail {
+        height:900px;
+    }
+    .card-cart {
+        width: 70%; 
+        height: 250px;
+    }
+    .card-img {
+        height: 104%; 
+        max-width: 150px; 
+    }
+}
+  

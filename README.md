@@ -7,6 +7,10 @@ Python project with django framework with stripe for the passage of my bachelor
 
 my project is on an e-commerce responsive site to order in book or on site and to take away. Once the order has been placed via a delivery form and payment has been received, an invoice is sent to the customer's email and to the company's email. Then the invoice and the customer details are automatically printed.
 
+## Screen of my project
+
+
+
 
 ## To start
 
@@ -18,6 +22,10 @@ Run the commande :
 ``apt install python``
 
 ``pip install django``
+
+``python -m venv venv``
+
+``source venv/bin/activate``
 
 ``pip install -r requirements.txt``
 

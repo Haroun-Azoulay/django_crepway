@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section>
+    <div class="p-0 d-flex justify-content-center background-accounts">
+        {% if user.is_authenticated %}
+        <div class="alert alert-info">
+            Vous êtes déjà connecté en tant que {{ user.username }}.
+        </div>
+        {% else %}
+        <div class="d-flex justify-content-center align-items-center">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="container" style="height:600px ; width:400px;">
+                    <h1 class="my-5 d-flex justify-content-center" style="color: white;">Inscription</h1>
+                    {% if error_message %}
+                    <p class="alert alert-danger" style="color: white;">{{ error_message }}</p>
+                    {% endif %}
+                    <div class="my-5 d-flex flex-column">
+                        <label for="username" style="color: white;" class="fs-5">Nom d'utilisateur</label>
+                        <input id="username" type="text" name="username" required class="form-control-lg">
+                    </div>
+                    <div class="my-5 d-flex flex-column">
+                        <label for="password" style="color: white;" class="fs-5">Mot de passe</label>
+                        <input id="password" type="password" name="password" required minlength="8" class="form-control-lg">
+                    </div>
+                    <div class="my-5 d-flex flex-column">
+                        <label for="email" style="color: white;" class="fs-5">E-mail</label>
+                        <input id="email" type="email" name="email" required class="form-control-lg">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-lg btn-warning text-white my-5">S'inscrire</button>
+                    </div>
+                    <div class=" d-flex flex-column justify-content-center align-items-center">
+                        <a href="{% url 'login' %}" class="my-2 fs-6 connexion-login_question text-decoration-none">Vous avez déjà un compte ? Venez ici</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        {% endif %}
+</section>
+{% endblock %}
